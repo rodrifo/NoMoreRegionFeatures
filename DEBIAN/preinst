@@ -1,0 +1,19 @@
+#!/bin/bash
+if [ -f /System/Library/Fonts/Core/KohinoorTelugu.ttc.no-more ]; then
+    # We clean up the font move if the package changes for simplicity.
+    echo "Rolling back file for package update..."
+    mv /System/Library/Fonts/Core/KohinoorTelugu.ttc.no-more /System/Library/Fonts/Core/KohinoorTelugu.ttc
+fi
+
+# Now to do some file magic
+if [ -f /System/Library/Fonts/Core/KohinoorTelugu.ttc ]; then
+    echo "Backing up the KohinoorTelugu.ttc file..."
+    mv /System/Library/Fonts/Core/KohinoorTelugu.ttc /System/Library/Fonts/Core/KohinoorTelugu.ttc.no-more
+    echo "Succesfully moved the KohinoorTelugu file. It is now stored at /System/Library/Fonts/Core/KohinoorTelugu.ttc.no-more"
+    echo "!!! DO NOT MOVE THIS FILE !!!"
+    exit 0
+else
+    echo "!!! THE TELUGU FONT COULD NOT BE FOUND !!!"
+    echo "Obtain the Telugu font manually using an IPSW for your system version and place it at /System/Library/Fonts/Core with the name KohinoorTelugu.ttc"
+    exit 1
+fi

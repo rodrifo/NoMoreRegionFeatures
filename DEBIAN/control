@@ -1,0 +1,10 @@
+Package: info.ev1l0rd.no-more-villains
+Name: No More Villains
+Version: 1.0.0-1
+Architecture: iphoneos-arm
+Description: Cleanly hides the Telugu font from iOS
+ Installed files are moved back cleanly after installation.
+Homepage: https://ev1l0rd-cydia.github.io/repo/no-more-villains
+Maintainer: Valentijn <contact@ev1l0rd.info>
+Author: Valentijn <contact@ev1l0rd.info>
+Section: Evis_Stuff

@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ -f /System/Library/Fonts/Core/KohinoorTelugu.ttc.no-more ]; then
+    echo "Restoring the Telugu font..."
+    mv /System/Library/Fonts/Core/KohinoorTelugu.ttc.no-more /System/Library/Fonts/Core/KohinoorTelugu.ttc
+    echo "Font sucesfully restored."
+    exit 0
+else
+    echo "!!! THE TELUGU FONT BACKUP COULD NOT BE FOUND !!!"
+    echo "Obtain the Telugu font manually using an IPSW for your system version and place it at /System/Library/Fonts/Core with the name KohinoorTelugu.ttc.no-more."
+    exit 1
+fi
